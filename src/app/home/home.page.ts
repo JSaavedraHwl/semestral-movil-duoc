@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Menu, MenuItem } from '../interfaces/menu.interface';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  menu = [
+  menu: MenuItem[] = [
     {
       name:"Home",
-      url:"/"
+      url:"/",
+      
     },
     {
       name:"Nuestro Catalogo",
