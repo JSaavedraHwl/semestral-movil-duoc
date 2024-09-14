@@ -6,7 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
+  menu = [
+    {
+      name:"Home",
+      url:"/"
+    },
+    {
+      name:"Nuestro Catalogo",
+      url: null
+    },
+    {
+      name:"Taller",
+      url:null
+    }
+  ]
   constructor() {}
 
 }
