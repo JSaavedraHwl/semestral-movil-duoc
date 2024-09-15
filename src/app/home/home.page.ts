@@ -10,16 +10,22 @@ export class HomePage {
   menu: MenuItem[] = [
     {
       name:"Home",
-      url:"/",
-      
+      url:"/home",
+      subMenu: [
+      ]
     },
     {
       name:"Nuestro Catalogo",
-      url: null
+      url: null,
+      subMenu: [
+        { name: 'Busqueda', url: '/productos', subMenu: [] },
+        { name: 'Submenu 1.2', url: '/productos', subMenu: [] },
+      ]
     },
     {
       name:"Taller",
-      url:null
+      url:null,
+      subMenu: []
     }
   ]
   constructor() {}
