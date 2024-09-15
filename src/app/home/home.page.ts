@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , HostListener } from '@angular/core';
 import { Menu, MenuItem } from '../interfaces/menu.interface';
 
 @Component({
@@ -7,6 +7,18 @@ import { Menu, MenuItem } from '../interfaces/menu.interface';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll(event : Event){
+    const scrollPosition = window.pageYOffset; 
+    const content = document.querySelector('.scrollable-content') as HTMLElement;
+
+    if (content) {
+     
+      content.style.transform = `translateY(${scrollPosition * 0.2}px)`;
+    }
+  }
+
   menu: MenuItem[] = [
     {
       name:"Home",
