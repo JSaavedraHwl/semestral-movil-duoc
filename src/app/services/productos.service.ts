@@ -31,8 +31,8 @@ export class ProductosService {
         return this.productosFiltrados;
     }
     async filtrarProductos( filtro: string ) {
-        console.log(filtro);
-        this.productosFiltrados = this.productos.filter( (producto) => producto.nombreProducto.includes(filtro) || producto.categoria?.includes(filtro) || producto.descripcion?.includes(filtro));
+        const filtroLimpio = filtro.toUpperCase();
+        this.productosFiltrados = this.productos.filter( (producto) => producto.nombreProducto.toUpperCase().includes(filtroLimpio) || producto.categoria?.toUpperCase().includes(filtroLimpio) || producto.descripcion?.toUpperCase().includes(filtroLimpio));
         return this.productosFiltrados;
     }
 }

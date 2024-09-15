@@ -1,29 +1,27 @@
 <ion-menu contentId="main-content" >
-  <ion-accordion-group>
-    <!-- Primer acordeón estático -->
-    
-  
-    <!-- Acordeones dinámicos -->
-<ion-accordion *ngFor="let item of menu" value="{{item.name}}" [toggleIcon]="item.subMenu.length > 0 ? 'default' : ''">
-      <ion-item slot="header" color="light">
-        <ion-label>{{ item.name }}</ion-label>
-      </ion-item>
-      <ng-container *ngIf="item.subMenu && item.subMenu.length > 0">
-          <div class="ion-padding" slot="content" *ngFor="let subItem of item.subMenu">
-            <a [href]="subItem.url">{{ subItem.name }}</a>
-          </div>
-        </ng-container>
-    </ion-accordion>
-  </ion-accordion-group>
   <ion-header>
     <ion-toolbar>
-      <ion-title>Menu Content</ion-title>
+      <ion-title>Bike's Masters</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  
-
-  <ion-content class="ion-padding">This is the menu content.</ion-content> 
+  <ion-content>
+    <ion-accordion-group>
+      <!-- Primer acordeón estático -->
+      
+    
+      <!-- Acordeones dinámicos -->
+  <ion-accordion *ngFor="let item of menu" value="{{item.name}}" [toggleIcon]="item.subMenu.length > 0 ? 'default' : ''">
+        <ion-item slot="header" color="light" (click)="redireccionar(item.url)">
+          <ion-label>{{ item.name }}</ion-label>
+        </ion-item>
+        <ng-container *ngIf="item.subMenu && item.subMenu.length > 0">
+            <div class="ion-padding" slot="content" *ngFor="let subItem of item.subMenu">
+              <a [href]="subItem.url">{{ subItem.name }}</a>
+            </div>
+          </ng-container>
+      </ion-accordion>
+    </ion-accordion-group>
+  </ion-content>
   
 </ion-menu>
 

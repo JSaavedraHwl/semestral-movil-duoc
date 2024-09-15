@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-perfil-usuario',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilUsuarioPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private toast: ToastController
+  ) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    const toast = await this.toast.create({
+      color:'secondary',
+      message: 'Se ha iniciado sesión correctamente.',
+      duration: 2000,
+    });
+    
+    toast.present();
   }
 
 }

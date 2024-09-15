@@ -21,7 +21,7 @@ export class HomePage {
 
   menu: MenuItem[] = [
     {
-      name:"Home",
+      name:"Inicio",
       url:"/home",
       subMenu: [
       ]
@@ -35,7 +35,12 @@ export class HomePage {
     },
     {
       name:"Taller",
-      url:null,
+      url:'/taller',
+      subMenu: []
+    },
+    {
+      name:"Perfil",
+      url:'/perfil-usuario',
       subMenu: []
     }
   ]
