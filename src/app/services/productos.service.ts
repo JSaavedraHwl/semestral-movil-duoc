@@ -10,7 +10,7 @@ export class ProductosService {
             descripcion: "Bicicleta de montaña con suspensión delantera y marco de aluminio ligero.",
             precio: 499.99,
             stock: 15,
-            categoria: "Bicicletas",
+            categoria: "Bicicletass",
             fechaCreacion: new Date('2024-08-01'),
             fotoUrl: "https://c02.purpledshub.com/uploads/sites/39/2022/10/Fox-DHX-Factory-rear-mountain-bike-shock-2-3e0ee7f.jpg?w=1029&webp=1"
           },
