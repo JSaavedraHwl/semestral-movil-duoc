@@ -19,7 +19,6 @@ export class HomePage {
       url: null,
       subMenu: [
         { name: 'Busqueda', url: '/productos', subMenu: [] },
-        { name: 'Submenu 1.2', url: '/productos', subMenu: [] },
       ]
     },
     {
