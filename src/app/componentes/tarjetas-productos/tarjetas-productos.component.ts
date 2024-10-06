@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Producto } from 'src/app/interfaces/interfaces.url';
 
 @Component({
@@ -8,8 +9,17 @@ import { Producto } from 'src/app/interfaces/interfaces.url';
 })
 export class TarjetasProductosComponent  implements OnInit {
   @Input() items: Producto[] = [];
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {}
 
+  navegarAlDetalle(producto: Producto) {
+    this.router.navigate([`/detalle-producto`], {
+      state: {
+        producto
+      }
+    })
+  }
 }

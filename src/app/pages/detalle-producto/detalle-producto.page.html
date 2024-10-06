@@ -1,0 +1,93 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button defaultHref="/home"></ion-back-button>
+      <ion-title>detalle-producto</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end" (click)="guardarEnFavoritos()">
+    <ion-fab-button color="danger">
+      <ion-icon name="heart"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <!-- <swipper-container loop="true" navigation="true">
+    <swipper-slide>
+      <img src="https://p3cycles.cl/cdn/shop/products/p3cycles15_1600x.jpg?v=1638392387" imageViewer>
+    </swipper-slide>
+    <swipper-slide>
+      <img src="https://c02.purpledshub.com/uploads/sites/39/2023/05/Specialized-Rockhopper-Elite-29-climb-243ee75.jpg" imageViewer>
+    </swipper-slide>
+    <swipper-slider>
+      <img src="https://i5.walmartimages.com/seo/Hyper-Bicycle-26-Men-s-Havoc-Mountain-Bike-Black_598552b8-96fc-4e95-9fbd-10b48c25f76a.ab643dd657a02399f80cfcc2adcc9b22.jpeg" imageViewer>
+    </swipper-slider>
+</swipper-container> -->
+  <ion-text>
+    <ion-label>{{producto.nombreProducto}}</ion-label>
+  </ion-text>
+  <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" navigation="true" space-between="30"
+    centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="false">
+    <swiper-slide>
+      <img class="swipper" src="https://p3cycles.cl/cdn/shop/products/p3cycles15_1600x.jpg?v=1638392387" >
+    </swiper-slide>
+    <swiper-slide>
+      <img class="swipper" src="https://c02.purpledshub.com/uploads/sites/39/2023/05/Specialized-Rockhopper-Elite-29-climb-243ee75.jpg" >
+    </swiper-slide>
+    <swiper-slide>
+      <img class="swipper" src="https://i5.walmartimages.com/seo/Hyper-Bicycle-26-Men-s-Havoc-Mountain-Bike-Black_598552b8-96fc-4e95-9fbd-10b48c25f76a.ab643dd657a02399f80cfcc2adcc9b22.jpeg" >
+    </swiper-slide>
+  </swiper-container>
+  <ion-segment (ionChange)="cambiarTab($event)">
+    <ion-segment-button value="descripcion">
+      <ion-label>Descripción</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="especificacion">
+      <ion-label>Especificación</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="reviews">
+      <ion-label>Reseñas</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <!-- Contenido dinámico basado en la tab seleccionada -->
+  <div [ngSwitch]="tabActual">
+    <div *ngSwitchCase="'descripcion'">
+      <!-- Contenido de la descripción -->
+      <ion-grid>
+        <h2>{{'Descripción' | uppercase }} </h2>
+        <p>
+          {{ producto.descripcion }}
+        </p>
+      </ion-grid>
+    </div>
+    <div *ngSwitchCase="'especificacion'">
+      <!-- Contenido de la especificación -->
+      <ion-grid>
+        <p>Especificaciones técnicas del producto...</p>
+        <ion-list>
+          <ion-item>
+            <ion-label>Nombre: Bicicleta BMX</ion-label>
+          </ion-item>
+        </ion-list>
+        <ion-list>
+          <ion-item>
+            <ion-label>Modelo: Moonstone 2077</ion-label>
+          </ion-item>
+        </ion-list>
+        <ion-list>
+          <ion-item>
+            <ion-label>Material: Aluminio</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-grid>
+    </div>
+    <div *ngSwitchCase="'reviews'">
+      <!-- Contenido de reseñas -->
+      <ion-grid>
+        <p>Reseñas del producto...</p>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>
