@@ -3,9 +3,9 @@
     <ng-container *ngFor="let item of items">
       <ion-col size="12" size-sm="6" size-md="4" size-lg="3">
         <ion-card class="ion-activatable" (click)="navegarAlDetalle(item)">
-          <img alt="Silhouette of mountains" [src]="item.fotoUrl" />
+          <img alt="Silhouette of mountains" [src]="item.urlImagen" />
           <ion-card-header>
-            <ion-card-title >{{ item.nombreProducto }}</ion-card-title>
+            <ion-card-title >{{ item.nombre }}</ion-card-title>
             <ion-card-subtitle>{{ item.precio | currency }}</ion-card-subtitle>
           </ion-card-header>
           <ion-ripple-effect></ion-ripple-effect>

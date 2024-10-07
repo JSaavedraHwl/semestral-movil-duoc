@@ -1,5 +1,11 @@
 {
   "name": "semestral-movil-duoc",
   "integrations": {},
-  "type": "angular"
+  "type": "angular",
+  "proxy": [
+    {
+      "path":"/api",
+      "proxyUrl":"http://localhost:3000"
+    }
+  ]
 }
